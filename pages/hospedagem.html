@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Como o site Universo é hospedado: tipo de hospedagem, arquivos, requisitos e passo a passo para publicar.">
+    <title>Hospedagem - Universo</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="bar">
+            <a class="brand" href="../index.html">Universo</a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+            <nav class="nav" id="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="big-bang.html">Big Bang</a></li>
+                    <li><a href="galaxias.html">Galáxias</a></li>
+                    <li><a href="estrelas.html">Estrelas</a></li>
+                    <li><a href="sistema-solar.html">Sistema Solar</a></li>
+                    <li><a href="planetas.html">Planetas</a></li>
+                    <li><a href="lua.html">Lua</a></li>
+                    <li><a href="buracos-negros.html">Buracos negros</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="hospedagem.html" aria-current="page">Hospedagem</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <h1>Hospedagem</h1>
+        <p class="lead">Hospedar um site é deixar os arquivos dele em um computador ligado o tempo todo à internet (um servidor), para que qualquer pessoa consiga abrir o endereço no navegador. Nesta página explicamos como o site Universo funciona nesse aspecto e como publicá-lo.</p>
+
+        <div class="stats">
+            <div class="stat"><strong>Estático</strong><span>tipo de site: só HTML, CSS, JS e arquivos de mídia</span></div>
+            <div class="stat"><strong>11 páginas</strong><span>incluindo esta</span></div>
+            <div class="stat"><strong>≈ 14 MB</strong><span>de peso total, quase tudo em vídeo e áudio</span></div>
+            <div class="stat"><strong>Sem servidor próprio</strong><span>nenhum banco de dados ou back-end</span></div>
+        </div>
+
+        <h2>Que tipo de hospedagem o site precisa?</h2>
+        <p>O Universo é um <strong>site estático</strong>: cada página já está pronta no arquivo <code>.html</code> e o navegador apenas a baixa e exibe. Não há PHP, Node.js, banco de dados nem qualquer programa rodando no servidor. Tudo o que é "dinâmico" (menu no celular, "Você sabia?", pop-up dos planetas) acontece no próprio navegador do visitante, com JavaScript.</p>
+        <div class="destaque">
+            <p><strong>Na prática:</strong> qualquer serviço capaz de entregar arquivos pela internet serve. Não é preciso contratar um servidor completo.</p>
+        </div>
+        <p>O formulário da página <a href="contato.html">Contato</a> é uma simulação: ele mostra a mensagem de confirmação, mas não envia nada a lugar nenhum. Por isso a hospedagem também não precisa receber nem guardar dados.</p>
+
+        <h2>O que precisa ser publicado</h2>
+        <p>Toda a pasta do projeto deve ser enviada, mantendo a organização das pastas, porque as páginas usam caminhos relativos para encontrar estilos, scripts e mídia.</p>
+        <div class="table-wrap">
+            <table>
+                <caption>Estrutura de arquivos do site</caption>
+                <thead>
+                    <tr><th scope="col">Item</th><th scope="col">Conteúdo</th><th scope="col">Peso aproximado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>index.html</code></td><td>Página inicial (precisa ficar na raiz)</td><td>8 KB</td></tr>
+                    <tr><td><code>pages/</code></td><td>As outras 10 páginas do site</td><td>≈ 80 KB</td></tr>
+                    <tr><td><code>css/</code> e <code>js/</code></td><td>Estilos e scripts</td><td>≈ 21 KB</td></tr>
+                    <tr><td><code>assets/</code></td><td>Vídeo, áudio, ícone e página do iframe</td><td>≈ 14,8 MB</td></tr>
+                    <tr><td><code>docs/</code></td><td>Diário de bordo e roteiro da apresentação (PDF)</td><td>≈ 150 KB</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="nota">O arquivo mais pesado é <code>assets/video.mp4</code>, com cerca de 13,8 MB. Se o espaço ou a velocidade for um problema, comprimir esse vídeo é a melhor forma de deixar o site mais leve.</p>
+
+
+        <nav class="pagina-nav" aria-label="Navegação entre páginas">
+            <a class="anterior" href="contato.html"><small>← Anterior</small>Contato</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Projeto de Engenharia de Software - 2º semestre · Grupo 5.0</p>
+    </footer>
+</body>
+</html>

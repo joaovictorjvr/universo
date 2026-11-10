@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sistema Solar interativo: passe o mouse sobre o Sol e os planetas para ver informações.">
+    <title>Sistema Solar - Universo</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sistema-solar.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/sistema-solar.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="bar">
+            <a class="brand" href="../index.html">Universo</a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+            <nav class="nav" id="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="big-bang.html">Big Bang</a></li>
+                    <li><a href="galaxias.html">Galáxias</a></li>
+                    <li><a href="estrelas.html">Estrelas</a></li>
+                    <li><a href="sistema-solar.html" aria-current="page">Sistema Solar</a></li>
+                    <li><a href="planetas.html">Planetas</a></li>
+                    <li><a href="lua.html">Lua</a></li>
+                    <li><a href="buracos-negros.html">Buracos negros</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="hospedagem.html">Hospedagem</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" class="wide">
+        <h1>Sistema Solar</h1>
+        <p class="lead">O Sistema Solar é formado pelo Sol e pelos astros que giram em torno dele: 8 planetas, luas, planetas anões, asteroides e cometas.</p>
+
+        <h2>Explore o sistema</h2>
+        <p><strong>Passe o mouse</strong> sobre o Sol ou sobre um planeta: ele aumenta e aparece uma ficha com informações. No celular, é só tocar no astro; no teclado, use a tecla Tab.</p>
+        <p class="nota dica-celular">Arraste o desenho para o lado para ver todos os planetas.</p>
+        <div class="scroll-x">
+            <svg class="sistema" viewBox="0 0 930 215" role="group" aria-label="Sol e os oito planetas alinhados, sem escala. Passe o mouse para ver informações.">
+                <defs>
+                    <radialGradient id="sombra" cx=".35" cy=".3" r=".85">
+                        <stop offset="0" stop-color="#fff" stop-opacity=".28"/>
+                        <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+                        <stop offset="1" stop-color="#000" stop-opacity=".6"/>
+                    </radialGradient>
+                    <radialGradient id="grad-sol" cx=".4" cy=".4" r=".75">
+                        <stop offset="0" stop-color="#fff3b0"/>
+                        <stop offset=".55" stop-color="#ffb52e"/>
+                        <stop offset="1" stop-color="#ee6a10"/>
+                    </radialGradient>
+                    <radialGradient id="brilho-sol">
+                        <stop offset=".6" stop-color="#f5a524" stop-opacity=".35"/>
+                        <stop offset="1" stop-color="#f5a524" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="bandas-jupiter" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#b98757"/>
+                        <stop offset=".18" stop-color="#e8d2b0"/>
+                        <stop offset=".32" stop-color="#b3794a"/>
+                        <stop offset=".48" stop-color="#ead8b8"/>
+                        <stop offset=".62" stop-color="#c58d5c"/>
+                        <stop offset=".78" stop-color="#e3c9a2"/>
+                        <stop offset="1" stop-color="#a8714a"/>
+                    </linearGradient>
+                </defs>
+
+                <line class="linha-orbita" x1="0" y1="95" x2="930" y2="95"/>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Sol: ver informações" data-info="ficha-sol" style="--zoom:1.15">
+                        <rect class="area" x="20" y="12" width="130" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="85" cy="95" r="77" fill="url(#brilho-sol)"/>
+                        <circle cx="85" cy="95" r="55" fill="url(#grad-sol)"/>
+                        </g>
+                        <text class="nome" x="85" y="188">Sol</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Mercúrio: ver informações" data-info="ficha-mercurio" style="--zoom:2.4">
+                        <rect class="area" x="155" y="12" width="60" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="185" cy="95" r="8" fill="#9c9c9c"/>
+                        <circle cx="185" cy="95" r="8" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="185" y="188">Mercúrio</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Vênus: ver informações" data-info="ficha-venus" style="--zoom:1.9">
+                        <rect class="area" x="220" y="12" width="60" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="250" cy="95" r="15" fill="#e3cd86"/>
+                        <circle cx="250" cy="95" r="15" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="250" y="188">Vênus</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Terra: ver informações" data-info="ficha-terra" style="--zoom:1.9">
+                        <rect class="area" x="292" y="12" width="60" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="322" cy="95" r="16" fill="#2f6fd6"/>
+                        <circle cx="322" cy="95" r="16" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="322" y="188">Terra</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Marte: ver informações" data-info="ficha-marte" style="--zoom:2.2">
+                        <rect class="area" x="362" y="12" width="60" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="392" cy="95" r="11" fill="#d4552b"/>
+                        <circle cx="392" cy="95" r="11" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="392" y="188">Marte</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Júpiter: ver informações" data-info="ficha-jupiter" style="--zoom:1.35">
+                        <rect class="area" x="450" y="12" width="100" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="500" cy="95" r="42" fill="url(#bandas-jupiter)"/>
+                        <circle cx="500" cy="95" r="42" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="500" y="188">Júpiter</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Saturno: ver informações" data-info="ficha-saturno" style="--zoom:1.4">
+                        <rect class="area" x="585" y="12" width="120" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="645" cy="95" r="30" fill="#dcbc6a"/>
+                        <circle cx="645" cy="95" r="30" fill="url(#sombra)"/>
+                        <ellipse cx="645" cy="95" rx="57" ry="14" fill="none" stroke="#d9c58a" stroke-opacity=".85" stroke-width="6" transform="rotate(-18 645 95)"/>
+                        </g>
+                        <text class="nome" x="645" y="188">Saturno</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Urano: ver informações" data-info="ficha-urano" style="--zoom:1.7">
+                        <rect class="area" x="735" y="12" width="60" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="765" cy="95" r="22" fill="#a9e3ea"/>
+                        <circle cx="765" cy="95" r="22" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="765" y="188">Urano</text>
+                    </g>
+
+                    <g class="astro" tabindex="0" role="button" aria-label="Netuno: ver informações" data-info="ficha-netuno" style="--zoom:1.7">
+                        <rect class="area" x="830" y="12" width="60" height="186" rx="10"/>
+                        <g class="corpo">
+                        <circle cx="860" cy="95" r="21" fill="#3f5fd0"/>
+                        <circle cx="860" cy="95" r="21" fill="url(#sombra)"/>
+                        </g>
+                        <text class="nome" x="860" y="188">Netuno</text>
+                    </g>
+            </svg>
+        </div>
+        <p class="nota">Os tamanhos e distâncias não estão em escala: se estivessem, os planetas seriam pontinhos quase invisíveis.</p>
+        <div id="fichas" hidden>
+                <article id="ficha-sol" data-cor="#f5a524">
+                    <h3>Sol</h3>
+                    <p class="tipo">Estrela (anã amarela)</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>1.392.000 km (109× a Terra)</dd>
+                    <dt>Massa</dt><dd>99,86% de todo o Sistema Solar</dd>
+                    <dt>Superfície</dt><dd>cerca de 5.500 °C</dd>
+                    <dt>Centro</dt><dd>cerca de 15 milhões °C</dd>
+                    <dt>Idade</dt><dd>cerca de 4,6 bilhões de anos</dd>
+                    <dt>Luz até a Terra</dt><dd>8 min 20 s</dd>
+                    </dl>
+                    <p class="curiosidade">Converte cerca de 600 milhões de toneladas de hidrogênio em hélio a cada segundo. É a fonte de quase toda a energia que usamos na Terra.</p>
+                </article>
+                <article id="ficha-mercurio" data-cor="#b5b5b5">
+                    <h3>Mercúrio</h3>
+                    <p class="tipo">Planeta rochoso</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>4.879 km</dd>
+                    <dt>Distância do Sol</dt><dd>57,9 milhões km</dd>
+                    <dt>Ano</dt><dd>88 dias terrestres</dd>
+                    <dt>Dia</dt><dd>59 dias terrestres</dd>
+                    <dt>Luas</dt><dd>nenhuma</dd>
+                    <dt>Temperatura</dt><dd>−180 °C a 430 °C</dd>
+                    </dl>
+                    <p class="curiosidade">É o menor planeta e o mais rápido: dá uma volta no Sol em só 88 dias. Quase não tem atmosfera, por isso a temperatura muda muito entre o dia e a noite.</p>
+                </article>
+                <article id="ficha-venus" data-cor="#e8d58b">
+                    <h3>Vênus</h3>
+                    <p class="tipo">Planeta rochoso</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>12.104 km</dd>
+                    <dt>Distância do Sol</dt><dd>108,2 milhões km</dd>
+                    <dt>Ano</dt><dd>225 dias terrestres</dd>
+                    <dt>Dia</dt><dd>243 dias terrestres</dd>
+                    <dt>Luas</dt><dd>nenhuma</dd>
+                    <dt>Temperatura</dt><dd>cerca de 465 °C</dd>
+                    </dl>
+                    <p class="curiosidade">É o planeta mais quente, por causa do efeito estufa de sua atmosfera de gás carbônico. Gira ao contrário da maioria dos planetas: lá, o Sol nasce no oeste.</p>
+                </article>
+                <article id="ficha-terra" data-cor="#3d8bff">
+                    <h3>Terra</h3>
+                    <p class="tipo">Planeta rochoso</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>12.742 km</dd>
+                    <dt>Distância do Sol</dt><dd>149,6 milhões km</dd>
+                    <dt>Ano</dt><dd>365 dias</dd>
+                    <dt>Dia</dt><dd>24 horas</dd>
+                    <dt>Luas</dt><dd>1 (a Lua)</dd>
+                    <dt>Temperatura</dt><dd>média de cerca de 15 °C</dd>
+                    </dl>
+                    <p class="curiosidade">É o único lugar do universo onde sabemos que existe vida. Cerca de 71% da sua superfície é coberta por água.</p>
+                </article>
+                <article id="ficha-marte" data-cor="#e0522a">
+                    <h3>Marte</h3>
+                    <p class="tipo">Planeta rochoso</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>6.779 km</dd>
+                    <dt>Distância do Sol</dt><dd>227,9 milhões km</dd>
+                    <dt>Ano</dt><dd>687 dias terrestres</dd>
+                    <dt>Dia</dt><dd>24 h 37 min</dd>
+                    <dt>Luas</dt><dd>2 (Fobos e Deimos)</dd>
+                    <dt>Temperatura</dt><dd>média de cerca de −60 °C</dd>
+                    </dl>
+                    <p class="curiosidade">Tem o Monte Olimpo, o maior vulcão do Sistema Solar, com cerca de 22 km de altura. A cor vermelha vem do óxido de ferro (ferrugem) no solo.</p>
+                </article>
+                <article id="ficha-jupiter" data-cor="#c98a5a">
+                    <h3>Júpiter</h3>
+                    <p class="tipo">Gigante gasoso</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>139.820 km</dd>
+                    <dt>Distância do Sol</dt><dd>778,5 milhões km</dd>
+                    <dt>Ano</dt><dd>11,9 anos terrestres</dd>
+                    <dt>Dia</dt><dd>cerca de 10 horas</dd>
+                    <dt>Luas</dt><dd>mais de 95</dd>
+                    <dt>Temperatura</dt><dd>cerca de −110 °C (nuvens)</dd>
+                    </dl>
+                    <p class="curiosidade">É o maior planeta: caberiam mais de 1.300 Terras dentro dele. A Grande Mancha Vermelha é uma tempestade gigante, maior que a Terra, observada há séculos.</p>
+                </article>
+                <article id="ficha-saturno" data-cor="#e5c15a">
+                    <h3>Saturno</h3>
+                    <p class="tipo">Gigante gasoso</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>116.460 km</dd>
+                    <dt>Distância do Sol</dt><dd>1,43 bilhão km</dd>
+                    <dt>Ano</dt><dd>29,5 anos terrestres</dd>
+                    <dt>Dia</dt><dd>cerca de 10 h 33 min</dd>
+                    <dt>Luas</dt><dd>mais de 270</dd>
+                    <dt>Temperatura</dt><dd>cerca de −140 °C (nuvens)</dd>
+                    </dl>
+                    <p class="curiosidade">Seus anéis, de gelo e rocha, se estendem por centenas de milhares de km, mas têm espessura de apenas dezenas de metros. Saturno é menos denso que a água.</p>
+                </article>
+                <article id="ficha-urano" data-cor="#bdf0f5">
+                    <h3>Urano</h3>
+                    <p class="tipo">Gigante de gelo</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>50.724 km</dd>
+                    <dt>Distância do Sol</dt><dd>2,87 bilhões km</dd>
+                    <dt>Ano</dt><dd>84 anos terrestres</dd>
+                    <dt>Dia</dt><dd>cerca de 17 horas</dd>
+                    <dt>Luas</dt><dd>mais de 25</dd>
+                    <dt>Temperatura</dt><dd>cerca de −195 °C</dd>
+                    </dl>
+                    <p class="curiosidade">Gira "deitado": seu eixo é inclinado cerca de 98°. Foi o primeiro planeta descoberto com telescópio, em 1781, por William Herschel.</p>
+                </article>
+                <article id="ficha-netuno" data-cor="#6f8ff0">
+                    <h3>Netuno</h3>
+                    <p class="tipo">Gigante de gelo</p>
+                    <dl>
+                    <dt>Diâmetro</dt><dd>49.244 km</dd>
+                    <dt>Distância do Sol</dt><dd>4,50 bilhões km</dd>
+                    <dt>Ano</dt><dd>165 anos terrestres</dd>
+                    <dt>Dia</dt><dd>cerca de 16 horas</dd>
+                    <dt>Luas</dt><dd>mais de 15</dd>
+                    <dt>Temperatura</dt><dd>cerca de −200 °C</dd>
+                    </dl>
+                    <p class="curiosidade">Tem os ventos mais rápidos do Sistema Solar, perto de 2.000 km/h. Foi descoberto em 1846 depois de ser previsto por cálculos matemáticos.</p>
+                </article>
+        </div>
+        <div class="popup" id="popup" role="tooltip" hidden></div>
+
+        <h2>Como o Sistema Solar nasceu</h2>
+        <p>Há cerca de 4,6 bilhões de anos, uma grande nuvem de gás e poeira começou a se contrair pela gravidade. No centro, a matéria se juntou e formou o Sol. O restante da nuvem se achatou num disco giratório, e nele pequenos grãos foram se unindo até formar asteroides e planetas.</p>
+
+        <h2>As regiões do Sistema Solar</h2>
+        <p>Os astrônomos usam a <strong>unidade astronômica (UA)</strong> para medir distâncias aqui: 1 UA é a distância média entre a Terra e o Sol, cerca de 149,6 milhões de km.</p>
+        <div class="table-wrap">
+            <table>
+                <caption>Da região mais próxima do Sol até a mais distante</caption>
+                <thead>
+                    <tr><th scope="col">Região</th><th scope="col">Distância do Sol</th><th scope="col">O que tem</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Planetas rochosos</td><td>0,4 a 1,5 UA</td><td>Mercúrio, Vênus, Terra e Marte: pequenos, com superfície sólida.</td></tr>
+                    <tr><td>Cinturão de asteroides</td><td>2,2 a 3,2 UA</td><td>Milhões de rochas, entre elas o planeta anão Ceres.</td></tr>
+                    <tr><td>Gigantes gasosos</td><td>5 a 10 UA</td><td>Júpiter e Saturno, feitos principalmente de hidrogênio e hélio.</td></tr>
+                    <tr><td>Gigantes de gelo</td><td>19 a 30 UA</td><td>Urano e Netuno, ricos em água, amônia e metano.</td></tr>
+                    <tr><td>Cinturão de Kuiper</td><td>30 a 50 UA</td><td>Corpos gelados, como o planeta anão Plutão.</td></tr>
+                    <tr><td>Nuvem de Oort</td><td>até cerca de 100 mil UA</td><td>Uma enorme "casca" de corpos gelados que seria a origem de muitos cometas. Ainda não foi observada diretamente.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>O Sistema Solar em escala real</h2>
+        <div class="destaque">
+            <p><strong>Imagine o Sol do tamanho de uma bola de basquete</strong> (24 cm). Nessa escala, a Terra seria um grão de cerca de 2 mm, a uns 26 metros de distância. Júpiter seria uma bolinha de gude a mais de 130 metros, e Netuno, um grão de uns 8 mm a quase 800 metros!</p>
+        </div>
+        <ul>
+            <li><strong>Luz:</strong> a luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra e mais de 4 horas para chegar a Netuno.</li>
+            <li><strong>Voyager 1:</strong> lançada em 1977, é a sonda que está mais longe da Terra. Já saiu do Sistema Solar e está a mais de 24 bilhões de km do Sol, no espaço entre as estrelas.</li>
+        </ul>
+
+        <h2>Para continuar</h2>
+        <p>Veja os números de todos os planetas lado a lado na página <a href="planetas.html">Planetas</a> e conheça o nosso satélite natural na página <a href="lua.html">Lua</a>.</p>
+
+        <nav class="pagina-nav" aria-label="Navegação entre páginas">
+            <a class="anterior" href="estrelas.html"><small>← Anterior</small>Estrelas</a>
+            <a class="proxima" href="planetas.html"><small>Próxima →</small>Planetas</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Projeto de Engenharia de Software - 2º semestre · Grupo 5.0</p>
+    </footer>
+</body>
+</html>

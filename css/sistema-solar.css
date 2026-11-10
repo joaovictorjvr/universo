@@ -1,0 +1,126 @@
+.sistema {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1rem 0 .5rem;
+    background: rgba(5, 7, 26, .6);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.astro {
+    cursor: pointer;
+    outline: none;
+}
+
+.astro .area {
+    fill: transparent;
+    stroke: transparent;
+}
+
+.astro:hover .area {
+    fill: rgba(142, 197, 255, .07);
+}
+
+.astro:focus-visible .area {
+    stroke: var(--ice);
+    stroke-width: 2;
+}
+
+.astro .corpo {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform .25s ease;
+}
+
+.astro:hover .corpo,
+.astro:focus-visible .corpo {
+    transform: scale(var(--zoom, 1.4));
+}
+
+.astro .nome {
+    fill: var(--muted);
+    font-family: var(--sans);
+    font-size: 15px;
+    text-anchor: middle;
+    transition: fill .2s;
+}
+
+.astro:hover .nome,
+.astro:focus-visible .nome {
+    fill: var(--text);
+    font-weight: 700;
+}
+
+.linha-orbita {
+    stroke: var(--line);
+    stroke-dasharray: 3 6;
+}
+
+.dica-celular {
+    display: none;
+    margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+    .dica-celular {
+        display: block;
+    }
+}
+
+
+.popup {
+    position: fixed;
+    z-index: 50;
+    width: min(330px, calc(100vw - 16px));
+    padding: 1rem 1.15rem;
+    font-size: .92rem;
+    line-height: 1.5;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--cor, var(--sun));
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .6);
+    pointer-events: none;
+    animation: aparecer .18s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+.popup h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    color: var(--cor, var(--sun));
+}
+
+.popup .tipo {
+    margin: 0 0 .7rem;
+    color: var(--muted);
+}
+
+.popup dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .25rem .9rem;
+    margin: 0;
+}
+
+.popup dt {
+    color: var(--ice);
+}
+
+.popup dd {
+    margin: 0;
+}
+
+.popup .curiosidade {
+    margin: .8rem 0 0;
+    padding-top: .7rem;
+    border-top: 1px solid var(--line);
+    color: var(--text);
+}

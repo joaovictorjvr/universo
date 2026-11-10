@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulário de contato do projeto Universo.">
+    <title>Contato - Universo</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="bar">
+            <a class="brand" href="../index.html">Universo</a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+            <nav class="nav" id="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="big-bang.html">Big Bang</a></li>
+                    <li><a href="galaxias.html">Galáxias</a></li>
+                    <li><a href="estrelas.html">Estrelas</a></li>
+                    <li><a href="sistema-solar.html">Sistema Solar</a></li>
+                    <li><a href="planetas.html">Planetas</a></li>
+                    <li><a href="lua.html">Lua</a></li>
+                    <li><a href="buracos-negros.html">Buracos negros</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="contato.html" aria-current="page">Contato</a></li>
+                    <li><a href="hospedagem.html">Hospedagem</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <h1>Contato</h1>
+        <p class="lead">Ficou com alguma dúvida, tem uma sugestão ou quer mandar um elogio? Preencha o formulário. Campos com * são obrigatórios.</p>
+        <form action="#" autocomplete="on">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" required minlength="3" autocomplete="name">
+
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" min="10" max="120">
+
+            <label for="assunto">Assunto *</label>
+            <select id="assunto" name="assunto" required>
+                <option value="">Selecione</option>
+                <option>Dúvida</option>
+                <option>Sugestão</option>
+                <option>Elogio</option>
+                <option>Correção de conteúdo</option>
+            </select>
+
+            <label for="msg">Mensagem *</label>
+            <textarea id="msg" name="msg" rows="5" required minlength="10"></textarea>
+
+            <button class="btn" type="submit">Enviar mensagem</button>
+        </form>
+        <p id="status" role="status" hidden></p>
+        <p class="nota">Este formulário é uma simulação feita para o trabalho: as mensagens não são enviadas a nenhum servidor.</p>
+
+        <h2>Sobre o projeto</h2>
+        <p>Este site foi desenvolvido pelo Grupo 5.0 para a disciplina de desenvolvimento web. Veja também o <a href="../docs/diario-de-bordo.pdf">diário de bordo</a> e o <a href="../docs/apresentacao.pdf">roteiro da apresentação</a>.</p>
+
+        <nav class="pagina-nav" aria-label="Navegação entre páginas">
+            <a class="anterior" href="multimidia.html"><small>← Anterior</small>Multimídia</a>
+            <a class="proxima" href="hospedagem.html"><small>Próxima →</small>Hospedagem</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Projeto de Engenharia de Software - 2º semestre · Grupo 5.0</p>
+    </footer>
+</body>
+</html>
